@@ -1,32 +1,25 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-import App from './App'
-
-import moment from 'moment'//时间管理器
-import router from '@/common/router.js';//路由
-import store from '@/common/vuex.js'//全局仓储
-import https from '@/common/https.js' //http请求
-import global from '@/common/global.js' //全局方法
-import Antd from 'ant-design-vue';
-
-import 'ant-design-vue/dist/antd.css';
-import '@/common/style/global.scss';
-// import '../config.scss';
-
-Vue.config.productionTip = false
-Vue.prototype.$http = https;
-Vue.prototype.$global = global;
-Vue.prototype.$store = store;
-Vue.prototype.$moment = moment;
-
-Vue.use(Antd);
+import App from './App.vue'
+import router from './router/router'
+import store from './store'
+// 引入antd
+import antd from 'ant-design-vue'
+import 'ant-design-vue/dist/antd.css'
+Vue.use(antd)
+// 引入公共样式
+import '../static/css/global.less'
+// 引入nprogress进度条
+import 'nprogress/nprogress.css'
+import api from './api'
+import {optionalChaining} from "./views/utils/common";
+import Router from 'vue-router';
+Vue.use(Router);
+Vue.prototype.$api = api;
+Vue.prototype.$isNot = optionalChaining; // 非空判断，为空返回 "未知"
 Vue.config.productionTip = false
 
-/* eslint-disable no-new */
 new Vue({
-  el: '#app',
   router,
-  components: { App },
-  template: '<App/>'
-})
+  store,
+  render: h => h(App)
+}).$mount('#app')

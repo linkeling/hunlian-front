@@ -27,6 +27,8 @@
 
 <script>
   import customViewInfo from "./components/customViewInfo";
+  import {getCustomBaseInfoPage} from "../../api/index";
+  import {isEmptyParams} from "../utils/common";
 
   const columns = [{
     title: '编号',
@@ -83,7 +85,7 @@
       }
     },
     mounted() {
-      this.getData();
+      this.getCustomBaseInfoData();
     },
     methods: {
       submitData() {
@@ -96,9 +98,8 @@
           }
         });
       },
-      getData() {
 
-      },
+
       showAddNew() {
         this.$refs.viewChild.customViewInfo = true;
       },
@@ -113,7 +114,20 @@
             }
           }
         }
-      }
+      },
+
+      getCustomBaseInfoData(){
+        this.loading = true;
+        let params={};
+        this.getCustomBaseInfoPage(params).then(({code, data}) => {
+          this.loading = false;
+          if (code === 'SUCCESS') {
+            const {dataList, total} = data;
+            this.tableData = dataList;
+            this.pagination.total = total;
+          }
+        });
+      },
     }
   }
 </script>

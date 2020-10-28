@@ -57,8 +57,8 @@
           </a-col>
           <a-col :span="8">
             <a-form-model-item label="职业" prop="profession">
-              <a-select v-model="formData.profession" placeholder=请选择学历请选择">
-                <a-select-option v-for="item in genderList" :key="item.id" :value="item.id">{{item.name}}</a-select-option>
+              <a-select v-model="formData.profession" placeholder="请选择职业">
+                <a-select-option v-for="item in professionList" :key="item.id" :value="item.id">{{item.name}}</a-select-option>
               </a-select>
             </a-form-model-item>
           </a-col>
@@ -85,21 +85,21 @@
         <a-row>
           <a-col :span="8">
             <a-form-model-item label="有无婚史" prop="marriage">
-              <a-select v-model="formData.gender" placeholder=请选择学历请选择">
-                <a-select-option v-for="item in genderList" :key="item.id" :value="item.id">{{item.name}}</a-select-option>
+              <a-select v-model="formData.marriage" placeholder="请选择有无婚史">
+                <a-select-option v-for="item in yesAndNoList" :key="item.id" :value="item.id">{{item.name}}</a-select-option>
               </a-select>
             </a-form-model-item>
           </a-col>
           <a-col :span="8">
             <a-form-model-item label="有无小孩" prop="children">
-              <a-select v-model="formData.gender" placeholder=请选择学历请选择">
-                <a-select-option v-for="item in genderList" :key="item.id" :value="item.id">{{item.name}}</a-select-option>
+              <a-select v-model="formData.children" placeholder="请选择有无小孩">
+                <a-select-option v-for="item in yesAndNoList" :key="item.id" :value="item.id">{{item.name}}</a-select-option>
               </a-select>
             </a-form-model-item>
           </a-col>
           <a-col :span="8">
             <a-form-model-item label="是否接受离异" prop="divorce">
-              <a-select v-model="formData.gender" placeholder=请选择学历请选择">
+              <a-select v-model="formData.divorce" placeholder="请选择学历请选择">
                 <a-select-option v-for="item in genderList" :key="item.id" :value="item.id">{{item.name}}</a-select-option>
               </a-select>
             </a-form-model-item>
@@ -163,12 +163,14 @@
           </a-col>
           <a-col :span="8">
             <a-form-model-item label="审核状态" prop="auditStatus">
-              <a-input placeholder="" v-model="formData.auditStatus"></a-input>
+              <a-select v-model="formData.auditStatus" placeholder="请选择审核状态">
+                <a-select-option v-for="item in auditList" :key="item.id" :value="item.id">{{item.name}}</a-select-option>
+              </a-select>
             </a-form-model-item>
           </a-col>
           <a-col :span="8">
             <a-form-model-item label="婚恋状态" prop="status">
-              <a-select v-model="formData.gender" placeholder=请选择学历请选择">
+              <a-select v-model="formData.status" placeholder="请选择婚恋状态">
                 <a-select-option v-for="item in genderList" :key="item.id" :value="item.id">{{item.name}}</a-select-option>
               </a-select>
             </a-form-model-item>
@@ -188,28 +190,13 @@
         customViewInfo: false,
         formRules: {},
         genderList:[{id:'1',name:'男'},{id:'2',name:'女'}],
-        educationList:[{
-          id: '1',
-          name: '博士'
-        }, {
-          id: '2',
-          name: '硕士'
-        }, {
-          id: '3',
-          name: '本科'
-        }, {
-          id: '4',
-          name: '大专'
-        }, {
-          id: '5',
-          name: '中专'
-        },{
-          id: '6',
-          name: '初中及以下'
-        },{
-          id: '7',
-          name: '文盲或半文盲'
-        }],
+        educationList:[{id: '1', name: '博士'}, {id: '2', name: '硕士'},
+          {id: '3', name: '本科'}, {id: '4', name: '大专'}, {id: '5', name: '中专'},
+          {id: '6', name: '初中及以下'},{id: '7', name: '文盲或半文盲'}],
+        professionList:[{id: '1', name: '公务员'},{id: '2', name: '事业单位'},],
+        yesAndNoList:[{id:'1',name:'有'},{id:'2',name:'无'}],
+        auditList:[{id:'1',name:'待审核'},{id:'2',name:'通过'},{id:'3',name:'拒绝'}],
+        statusList:[{id:'1',name:'待介绍'},{id:'2',name:'已介绍'}],
       }
     },
     mounted() {

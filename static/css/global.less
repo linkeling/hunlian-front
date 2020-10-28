@@ -1,0 +1,164 @@
+html, body, #app {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* 进度条 */
+#nprogress .bar {
+  background: #1890ff !important;
+}
+
+/* 搜索按钮 */
+.search_btn {
+  //padding: 5px 20px;
+  margin-top: 4px;
+}
+
+// 搜索下拉选
+.search_select .ant-select-selection--single {
+  width: 100%;
+}
+
+.search_right_btn {
+  float: right;
+}
+
+/* 表格按钮 */
+// .table_btn {
+//     padding: 0;
+// }
+.table_delbtn, .table_delbtn:hover, .table_delbtn:focus {
+  // padding: 0;
+  color: #cd0f25
+}
+
+/* 表格 */
+.ant-table {
+  //margin: 20px 0;
+  margin-bottom: 10px;
+  // min-height: 560px !important;
+}
+
+/* 表头样式 */
+.ant-table-thead > tr > th {
+  font-weight: bold;
+}
+
+// 分页
+.ant-pagination {
+  float: right;
+}
+
+// 弹窗内信息回显
+.form_block_title {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* 弹窗内卡片内边距 */
+.modal_card .ant-card-body {
+  padding: 15px;
+}
+
+/* 弹窗内边距 */
+.spill_modal .ant-modal-body {
+  padding: 0;
+}
+
+/* 弹窗内卡片之间间距 */
+.modal_card {
+  margin: 10px;
+  border-radius: 6px;
+}
+
+.row_item {
+  margin-top: 10px;
+}
+
+/* 弹窗内表格的表头样式 */
+.modal_table .ant-table-thead > tr > th {
+  background: #edeff3;
+  color: #333;
+  font-weight: 400;
+}
+
+/* 弹窗内表格的上外边距 */
+/*.modal_table .ant-table {
+  margin-top: 10px;
+}*/
+
+/* 弹窗内表单高度 */
+.form_height {
+  max-height: 492.4px;
+  overflow: auto;
+}
+
+/* 弹窗位置 */
+.spill_modal .ant-modal-wrap {
+  position: absolute;
+  top: -30px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 6px;
+  background-color: rgba(125, 125, 125, 0.7);
+  -webkit-border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  width: 6px;
+  background-color: rgba(125, 125, 125, 0.7);
+  -webkit-border-radius: 6px;
+}
+// 禁用框样式
+.ant-input[disabled] {
+    color: rgba(0, 0, 0, 0.65);
+}
+.ant-select-disabled {
+    color: rgba(0, 0, 0, 0.65);
+}
+//上传图片大小
+.upload-img {
+  height: 150px;
+  .ant-upload > img{
+    width: 230px;
+    height: 150px;
+  }
+  .ant-upload-list-picture-card-container {
+    margin: 0px!important;
+    width: 230px;
+    height: 150px;
+  }
+  .ant-upload.ant-upload-select-picture-card {
+    margin: 10px 0px 0px 95px;
+    background-color: transparent;
+    width: 230px;
+    height: 150px;
+  }
+
+  .ant-upload-list-picture-card .ant-upload-list-item {
+    margin: 10px 0px 0px 95px;
+    width: 230px;
+    height: 150px;
+  }
+
+}
+
+.upload-dra {
+  .ant-upload.ant-upload-drag {
+    background-color: transparent;
+  }
+}
