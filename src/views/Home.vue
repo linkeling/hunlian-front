@@ -26,7 +26,6 @@
                     <span class="system_type">{{systemType}}</span>
                 </div>
                 <div>
-                    {{networkInfo.unitName}}
                     <a-button type="link" @click="logout">退出登录</a-button>
                 </div>
             </a-layout-header>
@@ -52,15 +51,6 @@
             parent: null,
         }
     ]
-    const netWorkTabs = [
-        {
-            title: '基本信息',
-            key: '80',
-            path: '/supply/baseInfoManage',
-            parent: 78,
-        }
-    ]
-    const supplierTabs = []
     const unitActiveKey = '1'
     const netWorkActiveKey = '80'
     export default {
@@ -84,22 +74,12 @@
                 activeKey: '',
                 // 系统
                 systemType: '',
-
-                networkInfo: JSON.parse(window.sessionStorage.getItem('networkInfo')),
             }
         },
         created() {
-            const menuFalg = window.sessionStorage.getItem('loginType');
-            if (menuFalg === '1') {
-                this.systemType = '单位管理端';
-                this.tabs = JSON.parse(JSON.stringify(unitTabs));
-                this.activeKey = unitActiveKey
-            }
-            if (menuFalg === '2') {
-                this.systemType = '供应商管理端';
-                this.tabs = JSON.parse(JSON.stringify(netWorkTabs));
-                this.activeKey = netWorkActiveKey
-            }
+            this.systemType = '单位管理端';
+            this.tabs = JSON.parse(JSON.stringify(unitTabs));
+            this.activeKey = unitActiveKey
             const openKeys = Number(window.sessionStorage.getItem('openKeys'));
             this.openKeys = [openKeys];
             const activeItem = window.sessionStorage.getItem('activeItem');

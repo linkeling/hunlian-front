@@ -14,5 +14,9 @@ export default {
         getCustomBaseInfoPage(params) {//获取药具类型
             return fetch('/v1/match-admin/custom-base-info', params, 'get', 'json')
         },
+
+        insertCustomBaseInfo(params) {//获取药具类型
+            return fetch('/v1/match-admin/custom-base-info', params, 'post', 'json')
+        },
     },
 }
