@@ -47,14 +47,7 @@
                         window.sessionStorage.setItem('menuList', JSON.stringify(data.menuList));
                         window.sessionStorage.setItem('userInfo', JSON.stringify(data.userInfo));
                         window.sessionStorage.setItem('networkInfo', JSON.stringify(data.networkInfo));
-                        if (data.userInfo.userType === 1) {
-                            this.$router.push('/Home/index');
-                            window.sessionStorage.setItem('activeItem', '/Home/index');
-                        } else {
-                            this.$router.push('/supply/baseInfoManage');
-                            window.sessionStorage.setItem('activeItem', '/supply/baseInfoManage');
-                            window.sessionStorage.setItem('openKeys', 78);
-                        }
+                        this.$router.push('/Home/index');
                     } else {
                         this.$message.error('登录失败！');
                     }
