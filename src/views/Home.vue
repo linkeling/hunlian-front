@@ -61,7 +61,7 @@
                 // 菜单
                 menuList: [
                     {
-                        menuName: '基本信息', children: [{id:'1',menuName:"基本信息",path:'customInfoPage'}]
+                        menuName: '基本信息管理',icon:'bars', children: [{id:'1',menuName:"客户信息审核",path:'customInfoPage'}]
                     },
                 ],
                 // 默认展开菜单

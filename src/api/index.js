@@ -11,12 +11,17 @@ export default {
                 'json',
             )
         },
-        getCustomBaseInfoPage(params) {//获取药具类型
+        getCustomBaseInfoPage(params) {
             return fetch('/v1/match-admin/custom-base-info', params, 'get', 'json')
         },
 
+
+        getCustomBaseInfoById(id) {
+            return fetch(`/v1/match-admin/custom-base-info/${id}`)
+        },
+
         insertCustomBaseInfo(params) {//获取药具类型
-            return fetch('/v1/match-admin/custom-base-info', params, 'post', 'json')
+            return fetch(`/v1/match-admin/custom-base-info`, params, 'post', 'json')
         },
     },
 }
